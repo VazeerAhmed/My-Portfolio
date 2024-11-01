@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vazeer Ahmed Mohammad - Portfolio</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" href="./scripts.js">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <link rel="stylesheet" href="./style.css">
+    
+    
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-content">
+            
+            <div class="logo" style="color: white;">VAZEER AHMED &#128521</div>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#skills">Skills</a>
+                <a href="#certifications">Certifications</a>
+                <a href="#contact">Contact</a>
+                <a href="./websiteai.html">Movies</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Vazeer Ahmed Mohammad</h1>
+                <p>Software Developer & Data Scientist</p>
+                <a href="#projects" class="button">View My Work</a>
+            </div>
+            <div id="hero-canvas"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="about-content">
+            <h2>About Me</h2>
+            <p>A recent graduate with a B.Tech in Computer Science and Engineering, currently pursuing a Master's in Data Science at Teesside University. I specialize in project development with proficiency in various programming languages and cloud technologies.</p>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <h2 style="color: rgb(19, 18, 18);">Projects</h2>
+        <div class="project-grid">
+            <!-- Project Card 1 -->
+            <div class="project-card">
+                <h3>Indoor Navigation System</h3>
+                <p>• Successfully designed 2D maps using Binary Occupancy Map in MATLAB.<br>
+                • Improved location finding accuracy by 25%.<br>
+                • Decreased time needed to find specific locations by 30%.</p>
+                <div class="button-container">
+                    <button class="button read-more-btn" data-modal="modal1">Read More </button>
+                    <a href="https://github.com/vazeerahmed" class="button view-code-btn">Source Code</a>
+
+                    
+
+                </div>
+                
+            </div>
+            
+
+            <!-- Project Card 2 -->
+            <div class="project-card">
+                <h3>Predict Covid-19 Using CT Scan Images</h3>
+                <p>• Developed a predictor with 80% accuracy for Covid-19 detection using CT Scan images.<br>
+                • Implemented machine learning algorithms for image analysis.</p>
+                <button class="button read-more-btn" data-modal="modal2">Read More</button>
+            </div>
+
+            <!-- Project Card 3 -->
+            <div class="project-card">
+                <h3>Forum for People's Health</h3>
+                <p>• Set up a database of doctors and specializations.<br>
+                • Implemented toll-free number system.<br>
+                • Connected patients with required medical specialists.</p>
+                <button class="button read-more-btn" data-modal="modal3">Read More</button>
+            </div>
+
+            <div class="project-grid">
+                <!-- Project Card 4 -->
+                <div class="project-card">
+                    <h3>Improved Technology for Enquiry in Chat Bot</h3>
+                    <p>• Successfully designed the 2D map of our campus using Binary Occupancy Map in MATLAB.
+                        <br>
+                    • Utilized the indoor navigation system to represent and visualize a robot workspace including obstacles.
+                    <br>
+                    • Developed an indoor navigation system to increase accuracy by 25% and decrease time needed to find a specific location by 30%.
+                </p>
+                    <button class="button read-more-btn" data-modal="modal4">Read More</button>
+                </div>
+        </div>
+    </section>
+
+    <!-- Modals for Projects -->
+    <!-- Modal 1 -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <span class="close" data-modal="modal1">&times;</span>
+            <h2>Indoor Navigation System</h2>
+            <p>
+                <!-- Insert your detailed article or content here -->
+                This project involved designing a robust indoor navigation system using MATLAB. By utilizing the Binary Occupancy Map, we were able to create accurate 2D maps that significantly improved the accuracy of location finding by 25%. Additionally, the system reduced the time required to locate specific areas by 30%, enhancing user experience in large indoor environments such as malls, airports, and hospitals.
+            </p>
+        </div>
+    </div>
+
+    <!-- Modal 2 -->
+    <div id="modal2" class="modal">
+        <div class="modal-content">
+            <span class="close" data-modal="modal2">&times;</span>
+            <h2>Predict Covid-19 Using CT Scan Images</h2>
+            <p>
+                <!-- Insert your detailed article or content here -->
+                This machine learning project, developed in Python, addressed the critical need for rapid Covid-19 diagnosis. We created a predictor capable of analyzing CT scan images to determine whether they belonged to a Covid-19 patient. The model achieved an impressive 80% accuracy rate, demonstrating its potential as a valuable tool in the early detection and management of Covid-19 cases. This project showcased the power of machine learning in enhancing medical diagnostics during a global health crisis.
+
+            </p>
+        </div>
+    </div>
+
+    <!-- Modal 3 -->
+    <div id="modal3" class="modal">
+        <div class="modal-content">
+            <span class="close" data-modal="modal3">&times;</span>
+            <h2>Forum for People's Health</h2>
+            <p>
+                <!-- Insert your detailed article or content here -->
+                This project aimed to create an online forum connecting patients with medical specialists by setting up a comprehensive database of doctors and their specializations. In response to the challenges posed by the pandemic, it became a vital health resource, providing crucial support during a time of heightened health concerns. We successfully implemented a toll-free number system to ensure accessibility for all, making it easier for people in need to connect with the right medical professionals swiftly and efficiently. This platform facilitated important health discussions and enhanced the overall efficiency of healthcare services.
+            </p>
+        </div>
+    </div>
+
+
+    <!-- Modal 4 -->
+    <div id="modal4" class="modal">
+        <div class="modal-content">
+            <span class="close" data-modal="modal4">&times;</span>
+            <h2>Improved Technology for Enquiry in Chat Bot</h2>
+            <p>
+                <!-- Insert your detailed article or content here -->
+                This project focused on enhancing student satisfaction through the implementation of an advanced chatbot system. We successfully developed a web application capable of handling over 1000 requests per second, which dramatically reduced enquiry response times by 80%. The chatbot utilized artificial intelligence algorithms to understand and answer student queries effectively. As a result, we saw a significant 70% reduction in customer support tickets, streamlining the support process and improving overall efficiency in addressing student concerns.
+            </p>
+        </div>
+    </div>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <h2>SKILLS & INTERESTS</h2>
+        <div class="skill-grid">
+            <div class="skill-card">
+                <div class="skill-icon">
+                    <i class="fas fa-code fa-2x" style="color: var(--primary);"></i>
+                </div>
+                <h3>Programming Languages</h3>
+                <p>Python, Java, JavaScript, R, C, C++, HTML, SQL, TypeScript, PHP</p>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">
+                    <i class="fas fa-cloud fa-2x" style="color: var(--primary);"></i>
+                </div>
+                <h3>Cloud Platforms</h3>
+                <p>AWS (EC2, S3, RDS, Lambda, Sage Maker, Cloud Watch, VPC), Azure, Google Cloud Platform (GCP)</p>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">
+                    <i class="fas fa-robot fa-2x" style="color: var(--primary);"></i>
+                </div>
+                <h3>Machine Learning</h3>
+                <p>NumPy, Scikit-learn, Pandas, Pytorch, PySpark, TensorFlow, Spacy, NLTK, Keras,
+                    BERT, Matplotlib, Data Mining, OpenCV, HPC acceleration, GPU, CUDA
+                    </p>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">
+                    <i class="fas fa-robot fa-2x" style="color: var(--primary);"></i>
+                </div>
+                <h3>Big Data Technologies</h3>
+                <p>Apache Cassandra, Apache Kafka, Apache NiFi, Apache Spark, Hadoop, Hive, Presto </p>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">
+                    <i class="fas fa-cogs fa-2x" style="color: var(--primary);"></i> 
+                </div>
+                <h3>Tools & Technologies</h3>
+                <p>Flask, Django, Node.js, React.js, REST APIs, Fast API, Tableau, SaaS, MATLAB, Git (Version Control)</p>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">
+                    <i class="fas fa-cogs fa-2x" style="color: var(--primary);"></i>
+                </div>
+                <h3>Software Engineering</h3>
+                <p>Requirement Analysis, Agile and Scrum, Enterprise Architecture, JIRA, Software Development Lifecycle (SDLC), CI/CD, DevOps, Software Design, Jenkins, Docker, Kubernetes, micro services, distributed system</p>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">
+                    <i class="fas fa-database fa-2x" style="color: var(--primary);"></i>
+                </div>
+                <h3>Database</h3>
+                <p>MySQL, PostgreSQL, MongoDB, Cassandra, Neo4j, Redis, Elastic Search, DynamoDB, SQLite</p>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">
+                    <i class="fas fa-file-excel fa-2x" style="color: var(--primary);"></i> <!-- Excel Icon -->
+                </div>
+                <h3>Microsoft Office</h3>
+                <p>Excel, Word, PowerPoint</p>
+            </div>
+    
+            <!-- New Skill Card for Interests -->
+            <div class="skill-card">
+                <div class="skill-icon">
+                    <i class="fas fa-gamepad fa-2x" style="color: var(--primary);"></i> <!-- Video Game Icon -->
+                </div>
+                <h3>Interests</h3>
+                <p>Video Games, Photography & Music</p>
+            </div>
+        </div>
+            <!-- Add more skill cards as needed -->
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="certifications">
+        <h2 style="color: rgb(19, 18, 18);">Certifications</h2>
+        <div class="cert-grid">
+            <!-- Certification Card 1 -->
+            <div class="cert-card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="AWS Logo">
+                <h3>AWS Fundamentals</h3>
+                <p>Going Cloud-Native (Coursera)</p>
+                <span>22-Feb-2021</span>
+                <p class="skills-gained"><strong>Skills Gained:</strong> Cloud Architecture, AWS Services</p>
+                <a href="https://drive.google.com/file/d/1Hgi20QS_HKsfTypXmUSmUYidxuIqraC1/view?usp=drive_link" class="button" target="_blank">Download Certificate</a>
+            </div>
+
+            <!-- Certification Card 2 -->
+            <div class="cert-card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python Logo">
+                <h3>Python Programming</h3>
+                <p>GUVI Certification</p>
+                <span>18-Apr-2021</span>
+                <p class="skills-gained"><strong>Skills Gained:</strong> Python Syntax, Data Structures</p>
+                <a href="https://drive.google.com/file/d/1hRRaZJ-6ZTu2fy6HOn4TKC8ClP5DGYwp/view?usp=sharing" class="button" target="_blank">Download Certificate</a>
+            </div>
+
+            <!-- Certification Card 3 -->
+            <div class="cert-card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg" alt="Machine Learning Logo">
+                <h3>Machine Learning Bootcamp</h3>
+                <p>Lets Upgrade</p>
+                <span>31-Aug-2024</span>
+                <p class="skills-gained"><strong>Skills Gained:</strong> ML Algorithms, Data Modeling</p>
+                <a href="https://drive.google.com/file/d/1NuEyO0ZzLPriMhOrqOAwLUgmK79re0Cq/view?usp=sharing" class="button" target="_blank">Download Certificate</a>
+            </div>
+
+            <!-- Add more certification cards as needed -->
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="contact-content">
+            <!-- Contact Information -->
+            <div>
+                <h2>Contact Me</h2>
+                <p>Feel free to reach out for collaborations or just a friendly hello!</p>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:vazeerahmadmohammad@gmail.com">vazeerahmadmohammad@gmail.com</a></p>
+                <p><i class="fas fa-phone"></i> +44 778 005 8322  </p>
+            </div>
+            <!-- Social Links -->
+            <div>
+                <h2>Follow Me</h2>
+                <p>
+                    <a href="https://linkedin.com/in/vazeerahmed" target="_blank" class="button"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                    <a href="https://github.com/vazeerahmed" target="_blank" class="button"><i class="fab fa-github"></i> GitHub</a>
+                    <a href="https://twitter.com/vazeerahmed" target="_blank" class="button"><i class="fab fa-twitter"></i> Twitter</a>
+                </p>
+            </div>
+        </div>
+    </section>
+    <script src="scripts.js"></script>
+</body>
+</html>

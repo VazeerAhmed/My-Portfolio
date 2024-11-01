@@ -1,0 +1,482 @@
+
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+        
+        :root {
+            --primary: #1a202c;
+            --secondary: #E50914; 
+            --text: #f7fafc;
+            --background: #2d3748;
+            --accent: #e11d48;
+            --modal-background: rgba(0, 0, 0, 0.8);
+            --modal-content-bg: #1a202c;
+            
+
+        }
+            
+        
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        body {
+            background: var(--background);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        /* Modern Navigation */
+        nav {
+            position: fixed;
+            top: 0.1%;
+            left: 50%;
+            transform: translateX(-50%); 
+            width: 50%;
+            padding: 1.5rem;
+            background: linear-gradient(#1a202c, #2d3748);
+            backdrop-filter: blur(50px);
+            z-index: 100;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 20px; /* Curved borders */
+            overflow: hidden;
+    
+}
+
+
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .nav-links a {
+            margin-left: 2rem;
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 0 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero-text p {
+            font-size: 1.25rem;
+            color: #64748b;
+            margin-bottom: 2rem;
+        }
+
+        /* 3D Canvas Container */
+        #hero-canvas {
+            width: 100%;
+            height: 400px;
+            border-radius: 20px;
+            background: #f8fafc;
+        }
+
+        /* About Section */
+        #about {
+            padding: 6rem 2rem;
+        }
+
+        .about-content { 
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-content p {
+            font-size: 1.125rem;
+            color: #64748b;
+        }
+
+        /* Projects Section */
+        .projects {
+            padding: 6rem 2rem;
+            background: #f8fafc;
+        }
+
+        .projects h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .project-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 60px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .project-card h3 {
+            margin-bottom: 1rem;
+            font-size: 1.75rem;
+            color: #021535;
+        }
+
+        .project-card p {
+            flex-grow: 1;
+            color: #64748b;
+            margin-bottom: 1rem;
+        }
+
+        .button {
+            padding: 0.75rem 1.5rem;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .button:hover {
+            background: var(--secondary);
+            transform: translateY(-2px);
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 200; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto; /* Enable scroll if needed */
+            background-color: var(--modal-background);
+            padding-top: 60px;
+        }
+
+        .modal-content {
+            background-color: var(--modal-content-bg);
+            margin: 5% auto;
+            padding: 2rem;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 800px;
+            border-radius: 10px;
+            position: relative;
+        }
+
+        .close {
+            color: #aaa;
+            position: absolute;
+            top: 15px;
+            right: 25px;
+            font-size: 2rem;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: var(--accent);
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* Skills Section */
+        .skills {
+            padding: 6rem 2rem;
+        }
+
+        .skills h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .skill-grid {
+            max-width: 1500px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 5rem;
+            
+        }
+
+        .skill-card {
+            background: rgb(255, 255, 255);
+            border-radius: 60px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            width: 300px;  
+            height: 380px; 
+            
+        }
+
+        .skill-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 1rem;
+        }
+
+        .skill-card h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.25rem;
+            color: var(--primary);
+        }
+
+        .skill-card p {
+            color: #64748b;
+            font-size: 1rem;
+        }
+
+        /* Certifications Section */
+        .certifications {
+            padding: 6rem 2rem;
+            background: #f8fafc;
+        }
+
+        .certifications h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .cert-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .cert-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            
+        }
+
+        .cert-card img {
+            width: 60px;
+            height: auto;
+            margin-bottom: 1rem;
+        }
+
+        .cert-card h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+
+        .cert-card p {
+            color: #64748b;
+            margin-bottom: 0.5rem;
+        }
+
+        .cert-card span {
+            display: block;
+            margin-bottom: 1rem;
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+
+        .cert-card .skills-gained {
+            margin-bottom: 1rem;
+            color: #475569;
+            font-size: 0.95rem;
+        }
+
+        .cert-card .button {
+            padding: 0.5rem 1rem;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: 500;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background 0.3s ease;
+        }
+
+        .cert-card .button:hover {
+            background: var(--secondary);
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 6rem 2rem;
+        }
+
+        .contact-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-content p {
+            color: #64748b;
+            margin-bottom: 1rem;
+        }
+
+        /* Buttons and Interactive Elements */
+        .button {
+            padding: 0.75rem 1.5rem;
+            background: var(--primary);
+            color: white;
+            /*width: 150px;
+           /* margin-right: 10px; /* Space between buttons horizontally */
+           /* margin-bottom: 15px; /* Space between buttons vertically */
+            border: none;
+            border-radius: 10px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            flex-grow: 1;
+        }
+
+        .button-container {
+            display: flex;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Two buttons per row */
+            gap: 15px;  /* Space between buttons */
+            justify-content: flex-start; 
+        }
+        
+
+        .button:hover {
+            background: var(--secondary);
+            transform: translateY(-2px);
+        }
+
+        /* Animations */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-content {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .nav-links {
+                margin-top: 1rem;
+            }
+
+            .nav-links a {
+                margin-left: 0;
+                margin-right: 1.5rem;
+                display: block;
+                margin-bottom: 0.5rem;
+            }
+            .logo {
+            font-family: 'Aref Ruqaa', serif;
+            text-align: center;
+            line-height: 1.2;
+        }
+        .logo .arabic-name {
+            font-size: 24px;
+            color: #1a1a1a;
+            display: block;
+        }
+        .logo .english-name {
+            font-size: 14px;
+            color: #333;
+        }
+        .decorative-line {
+            height: 2px;
+            background: linear-gradient(to right, transparent, #1a1a1a, transparent);
+            width: 100%;
+            margin: 5px 0;
+        }
+        }

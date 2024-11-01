@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Setup</title>
+    <style>
+        :root {
+            --primary: #1a202c;
+            --secondary: #E50914;
+            --text: #333;
+            --background: #f7fafc;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        body {
+            background: var(--background);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 2rem;
+        }
+
+        .setup-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: var(--primary);
+            margin-bottom: 2rem;
+        }
+
+        .form-section {
+            margin-bottom: 2rem;
+            padding: 1rem;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+        }
+
+        .form-section h2 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .input-group {
+            margin-bottom: 1rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-entry {
+            border: 1px solid #e2e8f0;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 8px;
+        }
+
+        .skill-entry {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        button {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background: var(--secondary);
+        }
+
+        .buttons-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="setup-container">
+        <h1>Setup Your Portfolio</h1>
+        
+        <!-- Basic Information -->
+        <form id="portfolioForm">
+            <div class="form-section">
+                <h2>Basic Information</h2>
+                <div class="input-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" required>
+                </div>
+                <div class="input-group">
+                    <label for="title">Professional Title</label>
+                    <input type="text" id="title" required>
+                </div>
+            </div>
+
+            <!-- About Section -->
+            <div class="form-section">
+                <h2>About Me</h2>
+                <div class="input-group">
+                    <label for="about">About Description</label>
+                    <textarea id="about" rows="4" required></textarea>
+                </div>
+            </div>
+
+            <!-- Projects Section -->
+            <div class="form-section">
+                <h2>Projects</h2>
+                <div id="projectsContainer">
+                    <div class="project-entry">
+                        <div class="input-group">
+                            <label>Project Title</label>
+                            <input type="text" class="project-title" required>
+                        </div>
+                        <div class="input-group">
+                            <label>Project Description</label>
+                            <textarea class="project-description" rows="3" required></textarea>
+                        </div>
+                        <div class="input-group">
+                            <label>GitHub Link</label>
+                            <input type="url" class="project-github">
+                        </div>
+                    </div>
+                </div>
+                <button type="button" onclick="addProject()">Add Another Project</button>
+            </div>
+
+            <!-- Skills Section -->
+            <div class="form-section">
+                <h2>Skills</h2>
+                <div id="skillsContainer">
+                    <div class="skill-entry">
+                        <div class="input-group" style="flex-grow: 1;">
+                            <label>Skill Category</label>
+                            <input type="text" class="skill-category" placeholder="e.g., Programming Languages" required>
+                        </div>
+                        <div class="input-group" style="flex-grow: 2;">
+                            <label>Skills (comma-separated)</label>
+                            <input type="text" class="skill-list" placeholder="e.g., Python, Java, JavaScript" required>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" onclick="addSkill()">Add Another Skill Category</button>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="form-section">
+                <h2>Contact Information</h2>
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="input-group">
+                    <label for="phone">Phone</label>
+                    <input type="tel" id="phone">
+                </div>
+                <div class="input-group">
+                    <label for="linkedin">LinkedIn URL</label>
+                    <input type="url" id="linkedin">
+                </div>
+                <div class="input-group">
+                    <label for="github">GitHub URL</label>
+                    <input type="url" id="github">
+                </div>
+            </div>
+
+            <div class="buttons-container">
+                <button type="button" onclick="saveAsDraft()">Save as Draft</button>
+                <button type="submit">Generate Portfolio</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function addProject() {
+            const container = document.getElementById('projectsContainer');
+            const projectEntry = document.createElement('div');
+            projectEntry.className = 'project-entry';
+            projectEntry.innerHTML = `
+                <div class="input-group">
+                    <label>Project Title</label>
+                    <input type="text" class="project-title" required>
+                </div>
+                <div class="input-group">
+                    <label>Project Description</label>
+                    <textarea class="project-description" rows="3" required></textarea>
+                </div>
+                <div class="input-group">
+                    <label>GitHub Link</label>
+                    <input type="url" class="project-github">
+                </div>
+            `;
+            container.appendChild(projectEntry);
+        }
+
+        function addSkill() {
+            const container = document.getElementById('skillsContainer');
+            const skillEntry = document.createElement('div');
+            skillEntry.className = 'skill-entry';
+            skillEntry.innerHTML = `
+                <div class="input-group" style="flex-grow: 1;">
+                    <label>Skill Category</label>
+                    <input type="text" class="skill-category" placeholder="e.g., Programming Languages" required>
+                </div>
+                <div class="input-group" style="flex-grow: 2;">
+                    <label>Skills (comma-separated)</label>
+                    <input type="text" class="skill-list" placeholder="e.g., Python, Java, JavaScript" required>
+                </div>
+            `;
+            container.appendChild(skillEntry);
+        }
+
+        function saveAsDraft() {
+            const formData = collectFormData();
+            localStorage.setItem('portfolioDraft', JSON.stringify(formData));
+            alert('Draft saved successfully!');
+        }
+
+        function collectFormData() {
+            // Collect all form data and return as object
+            const formData = {
+                basicInfo: {
+                    name: document.getElementById('name').value,
+                    title: document.getElementById('title').value,
+                },
+                about: document.getElementById('about').value,
+                projects: Array.from(document.getElementsByClassName('project-entry')).map(entry => ({
+                    title: entry.querySelector('.project-title').value,
+                    description: entry.querySelector('.project-description').value,
+                    github: entry.querySelector('.project-github').value
+                })),
+                skills: Array.from(document.getElementsByClassName('skill-entry')).map(entry => ({
+                    category: entry.querySelector('.skill-category').value,
+                    skills: entry.querySelector('.skill-list').value.split(',').map(s => s.trim())
+                })),
+                contact: {
+                    email: document.getElementById('email').value,
+                    phone: document.getElementById('phone').value,
+                    linkedin: document.getElementById('linkedin').value,
+                    github: document.getElementById('github').value
+                }
+            };
+            return formData;
+        }
+
+        document.getElementById('portfolioForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = collectFormData();
+            // Here you would typically send the data to your backend
+            console.log('Form data collected:', formData);
+            alert('Portfolio data collected successfully! Ready to generate your portfolio.');
+        });
+
+        // Load draft if exists
+        window.addEventListener('load', function() {
+            const draft = localStorage.getItem('portfolioDraft');
+            if (draft) {
+                const data = JSON.parse(draft);
+                // Populate form with draft data
+                // You would need to implement this based on your needs
+            }
+        });
+    </script>
+</body>
+</html>
